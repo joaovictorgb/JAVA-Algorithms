@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner getScan = new Scanner(System.in);
+		int pillar = 6;
+		int line = 5;
+
+		if (pillar > 0 && line > 0) {
+			int[][] matrix = new int[pillar][line];
+
+			for (int setPillar = 0; setPillar < pillar; ++setPillar)
+				for (int setline = 0; setline < line; ++setline) {
+					System.out.printf("Digite a matriz da posição [%d][%d]: ", setPillar + 1, setline + 1);
+					matrix[setPillar][setline] = getScan.nextInt();
+				}
+
+			for (int setPillar = pillar; setPillar > 0; --setPillar)
+				for (int setline = line; setline > 0; --setline) {
+					System.out.println(matrix[setPillar][setline]);
+				}
+		}
+		getScan.close();
+	}
+}
